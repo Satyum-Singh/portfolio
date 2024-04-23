@@ -1,6 +1,7 @@
 import "./globals.css";
 import { Inter } from "next/font/google";
 import Header from "@/components/header";
+import MouseCursor from "@/components/mouse-cursor";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -19,6 +20,7 @@ export default function RootLayout({
       <body
         className={`${inter.className} bg-gray-50 text-gray-950 relative h-[5000px] pt-28 sm:pt-36`}
       >
+        <MouseCursor />
         <div
           className="bg-[#fbe2e3] absolute top-[-6rem] right-[11rem] h-[31.25rem] w-[31.25rem] -z-10 rounded-full blur-[10rem]
           sm:w-[68.75rem] 

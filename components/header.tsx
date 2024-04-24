@@ -1,11 +1,14 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { links } from "@/lib/data";
 import Link from "next/link";
 
 export default function Header() {
+
+  const [active,setActive]=useState("Home");
+
   return (
     <header className="z-[999] relative">
       <motion.div
@@ -29,7 +32,10 @@ export default function Header() {
             >
               <Link
                 href={link.hash}
-                className="flex w-full items-center justify-center p-3 hover:text-gray-950 transition-colors duration-500 ease-in-out"
+                className="flex w-full items-center justify-center 
+                  p-3 hover:text-gray-950 transition-colors 
+                  duration-500 ease-in-out text-gray-950 
+                "
               >
                 {link.name}
               </Link>

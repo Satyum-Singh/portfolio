@@ -4,10 +4,12 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { links } from "@/lib/data";
 import Link from "next/link";
+import clsx from "clsx";
+import { useActiveSection } from "@/context/active-section-context";
 
 export default function Header() {
-
-  const [active,setActive]=useState("Home");
+  const { active, setActive } = useActiveSection();
+  const {timeofLastClick, setTimeofLastClick} = useActiveSection();
 
   return (
     <header className="z-[999] relative">
@@ -26,18 +28,34 @@ export default function Header() {
           {links.map((link) => (
             <motion.li
               key={link.hash}
-              className="h-3/4 flex items-center justify-center"
+              className="h-3/4 flex items-center justify-center relative"
               initial={{ y: -100, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
             >
               <Link
                 href={link.hash}
-                className="flex w-full items-center justify-center 
-                  p-3 hover:text-gray-950 transition-colors 
-                  duration-500 ease-in-out text-gray-950 
-                "
+                className={clsx(
+                  "flex w-full items-center justify-center p-3 hover:text-gray-950 transition-colors duration-500 ease-in-out",
+                  {
+                    "text-gray-950": active === link.name,
+                  }
+                )}
+                onClick={()=> {
+                  setActive(link.name)
+                  setTimeofLastClick(Date.now())
+                }}
               >
                 {link.name}
+                {link.name === active && (
+                  <motion.span className="bg-gray-100 rounded-full absolute inset-0 -z-10"
+                    layoutId="active"
+                    transition={{
+                      type: "spring",
+                      stiffness: 500,
+                      damping: 30,
+                    }}
+                  ></motion.span>
+                )}
               </Link>
             </motion.li>
           ))}

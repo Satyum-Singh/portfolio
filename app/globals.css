@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+html{
+  --line-color: #e5e7eb;
+}
+
 .circle {
   height: 24px;
   width: 24px;
@@ -13,3 +17,5 @@
   pointer-events: none;
   z-index: 99999999; /* so that it stays on top of all other elements */
 }
+
+

@@ -4,7 +4,6 @@ import Header from "@/components/header";
 import MouseCursor from "@/components/mouse-cursor";
 import ActiveSectionContext from "@/context/active-section-context";
 
-
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
@@ -20,7 +19,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="!scroll-smooth">
       <body
-        className={`${inter.className} bg-gray-50 text-gray-950 relative h-[5000px] pt-28 sm:pt-36`}
+        className={`${inter.className} bg-gray-50 text-gray-950 relative h-max pt-28 sm:pt-36`}
       >
         <MouseCursor />
         <div

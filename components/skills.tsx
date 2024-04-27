@@ -18,7 +18,7 @@ const AnimationVariants = {
 };
 
 export default function Skills() {
-  const { ref } = useSectionInView("Skills");
+  const { ref, inView } = useSectionInView("Skills");
 
   return (
     <section
@@ -34,8 +34,8 @@ export default function Skills() {
             key={index}
             variants={AnimationVariants}
             initial="initial"
-            animate="animate"
-            viewport={{ once: true }}
+            animate={inView ? "animate" : "initial"}
+            // viewport={{ once: true }}
             custom={index}
           >
             {skill}

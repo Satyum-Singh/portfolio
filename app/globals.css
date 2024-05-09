@@ -6,6 +6,10 @@ html{
   --line-color: #e5e7eb;
 }
 
+.borderBlack{
+  @apply border border-black/10;
+}
+
 .circle {
   height: 24px;
   width: 24px;
@@ -17,5 +21,7 @@ html{
   pointer-events: none;
   z-index: 99999999; /* so that it stays on top of all other elements */
 }
+
+
 
 

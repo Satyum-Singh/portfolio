@@ -7,9 +7,11 @@ import profile from "../public/profile.jpg";
 import { BsArrowRight, BsGithub, BsLinkedin } from "react-icons/bs";
 import { HiDownload } from "react-icons/hi";
 import useSectionInView from "@/lib/hooks";
+import { useActiveSection } from "@/context/active-section-context";
 
 export default function Intro() {
   const { ref } = useSectionInView("Home", 0.5);
+  const { setActive, setTimeofLastClick } = useActiveSection();
   return (
     <section
       ref={ref}
@@ -101,6 +103,10 @@ export default function Intro() {
           outline-none focus:scale-110 transition duration-300 ease-in-out
           hover:scale-110 hover:bg-gray-950 active:scale-105 cursor-pointer
           "
+          onClick={() => {
+            setActive("Contact");
+            setTimeofLastClick(Date.now());
+          }}
         >
           Contact me Here
           <BsArrowRight className=" opacity-70 group-hover:translate-x-1 transition group-hover:scale-105  group-hover:opacity-100" />{" "}
@@ -109,7 +115,7 @@ export default function Intro() {
           className="group bg-white px-7 
           py-3 flex items-center gap-3 rounded-full
           outline-none focus:scale-110 transition duration-300 ease-in-out
-          hover:scale-110  active:scale-105 cursor-pointer border border-black/10
+          hover:scale-110  active:scale-105 cursor-pointer borderBlack
           "
           href="/resume.pdf"
           download
@@ -124,7 +130,7 @@ export default function Intro() {
         <a
           href="https://www.linkedin.com/in/satyum-singh-pathania/"
           className="bg-white px-14 py-3 text-gray-700 flex items-center gap-3 text-[1.35rem] rounded-full sm:p-4 outline-none focus:scale-[1.15] transition duration-300 ease-in-out
-          hover:scale-[1.15] hover:text-gray-950 active:scale-105 cursor-pointer border border-black/10"
+          hover:scale-[1.15] hover:text-gray-950 active:scale-105 cursor-pointer borderBlack"
           target="_blank"
         >
           <BsLinkedin />
@@ -132,7 +138,7 @@ export default function Intro() {
         <a
           href="https://github.com/Satyum-Singh"
           className="bg-white px-14 py-3 text-gray-700 flex items-center gap-3 text-[1.35rem] rounded-full sm:p-4 outline-none focus:scale-[1.15] transition duration-300 ease-in-out
-          hover:scale-[1.15] hover:text-gray-950 active:scale-105 cursor-pointer border border-black/10"
+          hover:scale-[1.15] hover:text-gray-950 active:scale-105 cursor-pointer borderBlack"
           target="_blank"
         >
           <BsGithub />

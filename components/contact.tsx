@@ -5,12 +5,13 @@ import SectionHeading from "./section-heading";
 import { motion } from "framer-motion";
 import useSectionInView from "@/lib/hooks";
 import { contactUser } from "../Actions/sendmail";
-import { useFormStatus } from "react-dom";
 import SubmitBtn from "./submitBtn";
+import toast, { Toaster } from "react-hot-toast";
+
+const notify = () => toast.success("Email sent Successfully!!");
 
 export default function Contact() {
   const { ref } = useSectionInView("Contact");
-  const { pending } = useFormStatus();
 
   return (
     <motion.section
@@ -31,7 +32,12 @@ export default function Contact() {
       </p>
       <form
         action={async (formData) => {
-          await contactUser(formData);
+          const { data, error } = await contactUser(formData);
+          if (error) {
+            toast.error(error);
+            return;
+          }
+          toast.success("Email sent Successfully");
         }}
         className="mt-10 flex flex-col"
       >
@@ -49,6 +55,27 @@ export default function Contact() {
           cols={30}
           rows={10}
           maxLength={5000}
+        />
+        <Toaster
+          position="top-center"
+          reverseOrder={false}
+          gutter={8}
+          containerClassName=""
+          containerStyle={{}}
+          toastOptions={{
+            // Define default options
+            className: "",
+            duration: 5000,
+            style: {
+              background: "#363636",
+              color: "#fff",
+            },
+
+            // Default options for specific types
+            success: {
+              duration: 3000,
+            },
+          }}
         />
         <SubmitBtn />
       </form>

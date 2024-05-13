@@ -24,9 +24,10 @@ export const contactUser = async (formData:FormData) => {
   }
 
   const isValid = await contactSchema.isValid(formData);
+  let data;
   try {
-    await resend.emails.send({
-      from: "Contact Form onboarding@resend.dev",
+    data = await resend.emails.send({
+      from: "Contact Form <onboarding@resend.dev>",
       to: "satyumspathania@gmail.com",
       subject: "Portfolio Visitor",
       reply_to: senderEmail as string,
@@ -40,5 +41,8 @@ export const contactUser = async (formData:FormData) => {
     return {
       error: getErrorMessage(error),
     };
+  }
+  return{
+    data,
   }
 };

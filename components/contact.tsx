@@ -2,13 +2,15 @@
 
 import React from "react";
 import SectionHeading from "./section-heading";
-import { FaPaperPlane } from "react-icons/fa";
 import { motion } from "framer-motion";
 import useSectionInView from "@/lib/hooks";
 import { contactUser } from "../Actions/sendmail";
+import { useFormStatus } from "react-dom";
+import SubmitBtn from "./submitBtn";
 
 export default function Contact() {
   const { ref } = useSectionInView("Contact");
+  const { pending } = useFormStatus();
 
   return (
     <motion.section
@@ -27,7 +29,12 @@ export default function Contact() {
         </a>{" "}
         or through this form
       </p>
-      <form action={contactUser} className="mt-10 flex flex-col">
+      <form
+        action={async (formData) => {
+          await contactUser(formData);
+        }}
+        className="mt-10 flex flex-col"
+      >
         <input
           name="email"
           className="h-14 px-4 rounded-lg borderBlack"
@@ -41,15 +48,9 @@ export default function Contact() {
           placeholder="Your message"
           cols={30}
           rows={10}
-          maxLength={500}
+          maxLength={5000}
         />
-        <button
-          className="group focus:scale-110 hover:scale-110 hover:bg-gray-950 active:scale-105 h-[3rem] w-[8rem] bg-gray-900 text-white rounded-full outline-none transition-all flex items-center justify-center gap-2"
-          type="submit"
-        >
-          Submit{" "}
-          <FaPaperPlane className="group-hover:translate-x-1 group-hover:-translate-y-1 text-xs opacity-70 transition-all" />{" "}
-        </button>
+        <SubmitBtn />
       </form>
     </motion.section>
   );

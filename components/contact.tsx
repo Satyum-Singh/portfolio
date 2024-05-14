@@ -12,7 +12,7 @@ const notify = () => toast.success("Email sent Successfully!!");
 
 export default function Contact() {
   const { ref } = useSectionInView("Contact");
-
+  
   return (
     <motion.section
       ref={ref}
@@ -39,18 +39,18 @@ export default function Contact() {
           }
           toast.success("Email sent Successfully");
         }}
-        className="mt-10 flex flex-col"
+        className="dark:text-black mt-10 flex flex-col"
       >
         <input
           name="email"
-          className="h-14 px-4 rounded-lg borderBlack"
+          className="h-14 px-4 rounded-lg borderBlack dark:bg-opacity/20 dark:bg-white dark:focus:bg-opacity-100 transition-all dark:outline-none"
           placeholder="Your email"
           type="email"
           maxLength={500}
         />
         <textarea
           name="message"
-          className="h-52 my-3 rounded-lg borderBlack p-4"
+          className="h-52 my-3 rounded-lg borderBlack p-4 dark:bg-opacity/20 dark:bg-white dark:focus:bg-opacity-100 transition-all dark:outline-none"
           placeholder="Your message"
           cols={30}
           rows={10}

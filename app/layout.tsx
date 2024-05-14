@@ -4,8 +4,7 @@ import Header from "@/components/header";
 import ActiveSectionContext from "@/context/active-section-context";
 import Footer from "@/components/footer";
 import ThemeSwitch from "@/components/theme-switch";
-import BackgroundAnimations from "@/components/background-animation";
-
+import ThemeContextProvider from "@/context/theme-context";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
@@ -33,12 +32,14 @@ export default function RootLayout({
           sm:w-[68.75rem] md:left-[-33rem] lg:left-[-28rem] xl:left-[-15rem] 2xl:left-[-5rem] dark:bg-[#676394]
         "
         ></div>
-        <ActiveSectionContext>
-          <Header />
-          {children}
-          <Footer />
-        </ActiveSectionContext>
-        <ThemeSwitch />
+        <ThemeContextProvider>
+          <ActiveSectionContext>
+            <Header />
+            {children}
+            <Footer />
+            <ThemeSwitch />
+          </ActiveSectionContext>
+        </ThemeContextProvider>
       </body>
     </html>
   );

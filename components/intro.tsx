@@ -116,21 +116,21 @@ export default function Intro() {
           py-3 flex items-center gap-3 rounded-full
           outline-none focus:scale-110 transition duration-300 ease-in-out
           hover:scale-110  active:scale-105 cursor-pointer borderBlack
-          "
+          dark:bg-white/10"
           href="/resume.pdf"
           download
         >
           Download Resume{" "}
           <HiDownload
             className="opacity-60
-             transition group-hover:scale-110  group-hover:opacity-90
+             transition group-hover:scale-110  group-hover:opacity-90 
           "
           />{" "}
         </a>
         <a
           href="https://www.linkedin.com/in/satyum-singh-pathania/"
           className="bg-white px-14 py-3 text-gray-700 flex items-center gap-3 text-[1.35rem] rounded-full sm:p-4 outline-none focus:scale-[1.15] transition duration-300 ease-in-out
-          hover:scale-[1.15] hover:text-gray-950 active:scale-105 cursor-pointer borderBlack"
+          hover:scale-[1.15] hover:text-gray-950 active:scale-105 cursor-pointer borderBlack dark:bg-white/10 dark:text-white/60 dark:hover:text-white"
           target="_blank"
         >
           <BsLinkedin />
@@ -138,7 +138,7 @@ export default function Intro() {
         <a
           href="https://github.com/Satyum-Singh"
           className="bg-white px-14 py-3 text-gray-700 flex items-center gap-3 text-[1.35rem] rounded-full sm:p-4 outline-none focus:scale-[1.15] transition duration-300 ease-in-out
-          hover:scale-[1.15] hover:text-gray-950 active:scale-105 cursor-pointer borderBlack"
+          hover:scale-[1.15] hover:text-gray-950 active:scale-105 cursor-pointer borderBlack dark:bg-white/10 dark:text-white/60 dark:hover:text-white"
           target="_blank"
         >
           <BsGithub />

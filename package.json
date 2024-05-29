@@ -14,6 +14,7 @@
     "@types/node": "20.12.7",
     "@types/react": "18.2.79",
     "@types/react-dom": "18.2.25",
+    "@vercel/speed-insights": "^1.0.11",
     "autoprefixer": "10.4.19",
     "clsx": "^2.1.1",
     "eslint": "8.57.0",

@@ -117,7 +117,7 @@ export default function Intro() {
           outline-none focus:scale-110 transition duration-300 ease-in-out
           hover:scale-110  active:scale-105 cursor-pointer borderBlack
           dark:bg-white/10"
-          href="/resume.pdf"
+          href="/Satyum_singh_pathania_Resume.pdf"
           download
         >
           Download Resume{" "}

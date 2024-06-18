@@ -1,9 +1,9 @@
 import { CgWorkAlt } from "react-icons/cg";
 import { FaReact } from "react-icons/fa";
 import { LuGraduationCap } from "react-icons/lu";
-import corpcommentImg from "@/public/corpcomment.png";
-import rmtdevImg from "@/public/rmtdev.png";
-import wordanalyticsImg from "@/public/wordanalytics.png";
+import corpcommentImg from "@/public/discord_clone.png";
+import rmtdevImg from "@/public/crypto_verse.png";
+import wordanalyticsImg from "@/public/spline_project.png";
 import React from "react";
 
 export const links = [
@@ -35,51 +35,57 @@ export const links = [
 
 export const experiencesData = [
   {
-    title: "Graduated bootcamp",
-    location: "Miami, FL",
+    title: "Matriculation",
+    location: "Sidhpur, Himachal Pradesh",
     description:
-      "I graduated after 6 months of studying. I immediately found a job as a front-end developer.",
+      "During my time there, I actively participated in sports, arts, or playing instruments and achieved many milestones. The supportive environment at Sacred Heart Senior Secondary School helped me grow in various areas of my interest and shaped my academic and personal journey.",
     icon: React.createElement(LuGraduationCap),
     date: "2019",
   },
   {
-    title: "Front-End Developer",
-    location: "Orlando, FL",
+    title: "Intermediate",
+    location: "Sidhpur, Himachal Pradesh",
     description:
-      "I worked as a front-end developer for 2 years in 1 job and 1 year in another job. I also upskilled to the full stack.",
+      "I completed my 12th grade in a non-medical science stream during the infamous COVID era. Picture me tackling physics, chemistry, and mathematics from home – a thrilling roller coaster ride with the occasional bout of nausea. Despite the chaos, I emerged with a solid education and some entertaining stories.",
     icon: React.createElement(CgWorkAlt),
     date: "2019 - 2021",
   },
   {
-    title: "Full-Stack Developer",
-    location: "Houston, TX",
-    description:
-      "I'm now a full-stack developer working as a freelancer. My stack includes React, Next.js, TypeScript, Tailwind, Prisma and MongoDB. I'm open to full-time opportunities.",
+    title: "UI/UX Designer",
+    location: "Rajpura, Punjab",
+    description:"Successfully led the design process, incorporating user research and usability testing to create aesthetically pleasing designs, developed interactive prototypes to demonstrate product features, optimized designs for accessibility and usability, and ensured evolving end-user needs were met, resulting in consistently positive feedback and successful project outcomes.",
     icon: React.createElement(FaReact),
-    date: "2021 - present",
+    date: "2023",
   },
+  {
+    title: "Computer Science Student",
+    location: "Rajpura, Punjab",
+    description:"Hailing from Chitkara University, I am a dedicated final-year Computer Science student deeply immersed in a variety of co-curricular pursuits. I am actively expanding into the realm of 3D design and Devops. Engaging in activities such as football, hackathons, and designathons has equipped me with a robust skill set and a proactive approach to problem-solving, essential for thriving in dynamic technological landscapes.",
+    icon: React.createElement(FaReact),
+    date: "2021 - Present",
+  },
+
 ] as const;
 
 export const projectsData = [
   {
-    title: "CorpComment",
+    title: "Discord Clone",
     description:
-      "I worked as a full-stack developer on this startup project for 2 years. Users can give public feedback to companies.",
-    tags: ["React", "Next.js", "MongoDB", "Tailwind", "Prisma"],
+      "In progress Discord clone to demonstrate expertise in full-stack web development, focusing on frontend and backend functionality, real-time communication features and database management.",
+    tags: ["React", "Next.js", "Socket.io", "Tailwind", "Prisma","MySQL"],
     imageUrl: corpcommentImg,
   },
   {
-    title: "rmtDev",
+    title: "CryptoVerse",
     description:
-      "Job board for remote developer jobs. I was the front-end developer. It has features like filtering, sorting and pagination.",
-    tags: ["React", "TypeScript", "Next.js", "Tailwind", "Redux"],
+      "This comprehensive React application keeps you ahead in the ever-evolving crypto world, offering real-time data, news and analysis. Cryptoverse is not just a web app, it's a PWA! ",
+    tags: ["React", "Redux-Toolkit", "RestAPI", "ChartJS", "PWA","Ant-Design"],
     imageUrl: rmtdevImg,
   },
   {
-    title: "Word Analytics",
-    description:
-      "A public web app for quick analytics on text. It shows word count, character count and social media post limits.",
-    tags: ["React", "Next.js", "SQL", "Tailwind", "Framer"],
+    title: "3D Hero Section",
+    description: "Experience a captivating introduction with a React app featuring a visually stunning Spline-powered 3D hero section, showcasing seamless integration for a visually appealing start.",
+    tags: ["React", "Spline", "Tailwind", "Framer"],
     imageUrl: wordanalyticsImg,
   },
 ] as const;
@@ -97,11 +103,11 @@ export const skillsData = [
   "Prisma",
   "MongoDB",
   "Redux",
-  "GraphQL",
-  "Apollo",
+  "Figma",
+  "Canva",
   "Express",
-  "PostgreSQL",
-  "Python",
-  "Django",
+  "Spline",
+  "MySQL",
+  "Rest APIs",
   "Framer Motion",
 ] as const;
